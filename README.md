@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/dexmac/api-validation-with-nightwatch.svg?branch=master)](https://travis-ci.org/dexmac/api-validation-with-nightwatch)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://raw.githubusercontent.com/dexmac/api-validation-with-nightwatch/master/LICENSE)
+
 **Table of Contents**
 
 - [Project Intro](#Intro)
@@ -61,14 +64,14 @@ On a Mac, this should automatically run the Selenium server, the Chrome Webdrive
 and start using the assertion in our nightwatchJS tests like so: 
 
 ```javascript
-  'test' : function(browser) {
-    var requestParameters = {
-      "param1" : "value1",
-      "param2" : "value2"
-    };
-  
-    browser.assert.hasRequest('https://some.request.url', requestParameters);
-  }
+'test' : function(browser) {
+  var requestParameters = {
+    "param1" : "value1",
+    "param2" : "value2"
+  };
+
+  browser.assert.hasRequest('https://some.request.url', requestParameters);
+}
 ```
 
 The final URL to validate agains will therefore be: `https://some.request.url/?param1=value1&param2=value2`
@@ -78,18 +81,19 @@ to enable wildcards and “fuzzy comparison”, e.g.:
 
 ```javascript
 'test' : function(browser) {
-    var requestParameters = {
-      "param1" : ".*",
-      "param2" : "val.*"
-    };
-  
-    browser.assert.hasRequest('https://some.request.url', requestParameters);
-  }
+  var requestParameters = {
+    "param1" : ".*",
+    "param2" : "val.*"
+  };
+
+  browser.assert.hasRequest('https://some.request.url', requestParameters);
+}
 ```
 
-In which case even a URL such as: `https://some.request.url/?param1=ANYVALUE&param2=val123` will pass the assertion.
+In which case even a URL such as: `https://some.request.url/?param1=ANYVALUE&param2=val123` 
+will pass the assertion.
 
-*Note* - this assertion can also be used to inspect resources downloaded on the page (e.g., external CSS, images, external sources, etc.), however the main use would probably be testing APIs, and therefore it is named - 'hasRequest'.
+*Note* - this assertion can also be used to inspect resources downloaded on the page (e.g., external CSS, images, external sources, etc.), however the main use would probably be testing APIs, and therefore it is aptly named - 'hasRequest'.
 
 <a name="Contribute"></a>
 
