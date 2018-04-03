@@ -1,15 +1,19 @@
 {
-  "name": "e2e",
+  "name": "api-validation-with-nightwatch",
   "description": "NightwatchJS API Validation Example",
   "version": "1.0.0",
   "author": "dexmac",
   "private": true,
   "scripts": {
-    "test": "./node_modules/.bin/nightwatch"
+    "install-selenium": "node nightwatch.conf.js",
+    "test": "node_modules/.bin/nightwatch --config nightwatch.conf.js"
   },
   "dependencies": {
     "nightwatch": "^0.9.0",
     "selenium-server": "^2.53.1",
-    "chromedriver": "^2.0.0",
+    "chromedriver": "^2.0.0"
+  },
+  "devDependencies": {
+    "selenium-download": "^2.0.7"
   }
 }
