@@ -1,0 +1,15 @@
+{
+  "name": "e2e",
+  "description": "NightwatchJS API Validation Example",
+  "version": "1.0.0",
+  "author": "dexmac",
+  "private": true,
+  "scripts": {
+    "test": "./node_modules/.bin/nightwatch"
+  },
+  "dependencies": {
+    "nightwatch": "^0.9.0",
+    "selenium-server": "^2.53.1",
+    "chromedriver": "^2.0.0",
+  }
+}
