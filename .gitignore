@@ -3,6 +3,7 @@
 #nightwach
 /output
 /reports
+/logs
 
 # dependencies
 /node_modules
