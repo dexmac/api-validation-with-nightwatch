@@ -12,29 +12,29 @@
 
 <a name="Intro"></a>
 
-# Intro
-Validating APIs with NightwatchJS
+# Validating APIs using NightwatchJS
 
-NightwatchJS is a great tool for web application end-to-end automation.
+NightwatchJS is a great tool for web-application end-to-end automation.
 
 Every web application deals with many outgoing requests & incoming responses, 
 whether it be by making AJAX requests or by downloading resources. 
-Thus, when performing end to end testing it is very beneficial to validate if outgoing requests conform to pre-set APIs.
+Thus, when performing end-to-end testing it is very beneficial to validate if outgoing requests conform to pre-set APIs.
 
 But how can we make sure that a request was made and that it conforms to a specific protocol? 
 Come [NightwatchJS assertions](#custom-nightwatch-assertions) to the rescue…
 
 Common methods for testing APIs in E2E tests involve setting up mock-servers or using network sniffing tools.
-However, when testing with Nighwatch, it makes sense to use Nightwatch itself (via [performance.timing](#Supported Browsers))
+When testing with Nighwatch however, it makes sense to use Nightwatch itself (via [performance.timing](#Supported Browsers))
 
-An existing Nightwatch assertion [exists on Github](https://github.com/aedile/nightwatch-analytics/blob/master/tests/assertions/hasRequest.js) to validates that the parameters of a request exist. 
-The current project is a rewrite which improves the assertion by adding regular expression testing for validation of each of the request parameters.
+An existing Nightwatch assertion [exists on Github](https://github.com/aedile/nightwatch-analytics/blob/master/tests/assertions/hasRequest.js) and validates that the parameters of a request exist. 
+The current assertion is a rewrite, which improves the above assertion by adding regular expression testing for validation of each of the request parameters.
 
-The demo project is an example of navigating to Google.com, performing a search for 'NightwatchJS' 
+The demo project includes an example of navigating to Google.com, performing a search for 'NightwatchJS' 
 and validating if the search URL sent to Google's servers contains the string, as well as other parameters.
+It also includes an example of how to setup NightwatchJS for use with Travis.CI, to run the tests on both Linux and Mac machines remotely.
 
-For instructions on how the assertions can be used inside your own NightwatchJS project please see - 
-[Usage](#Usage). 
+For more detailed instructions on how the assertion can be used inside your own NightwatchJS project please see - 
+[Usage](#Usage).
 
 ![preview](apiValidation.gif)
 
@@ -59,8 +59,10 @@ On a Mac, this should automatically run the Selenium server, the Chrome Webdrive
 ## Usage:
 
 1. Validate NightwatchJS's custom assertions directory and custom commands directory location inside your nightwatch.json configuration file: (e.g., "custom_assertions_path" : "tests/e2e/assertions", "custom_commands_path" : "tests/e2e/commands").
-2. Place the custom assertion file inside the custom assertions directory. And the custom command file inside the commands dir.
-3. We can now define our expected URLs in our fixtures by using our [page-object module](https://github.com/nightwatchjs/nightwatch/wiki/Page-Object-API) or, perhaps, define our URLs as constants / plain strings
+
+2. Place the custom assertion file inside the custom assertions directory. And the custom command file inside the commands directory.
+
+3. We can now define our expected URLs in our fixtures by using our [page-object module](https://github.com/nightwatchjs/nightwatch/wiki/Page-Object-API) or, perhaps, define our URLs as constants / plain-strings
 and start using the assertion in our nightwatchJS tests like so: 
 
 ```javascript
@@ -74,7 +76,8 @@ and start using the assertion in our nightwatchJS tests like so:
 }
 ```
 
-The final URL to validate agains will therefore be: `https://some.request.url/?param1=value1&param2=value2`
+The final URL to validate that is asserted will therefore be: `https://some.request.url/?param1=value1&param2=value2`
+and incase the exact URL and parameters exist the assertion will be true.
 
 4. Specific parameter values (e.g., value1 & value2 above) can also be replaced with regular expressions, 
 to enable wildcards and “fuzzy comparison”, e.g.:
@@ -93,7 +96,7 @@ to enable wildcards and “fuzzy comparison”, e.g.:
 In which case even a URL such as: `https://some.request.url/?param1=ANYVALUE&param2=val123` 
 will pass the assertion.
 
-*Note* - this assertion can also be used to inspect resources downloaded on the page (e.g., external CSS, images, external sources, etc.), however the main use would probably be testing APIs, and therefore it is aptly named - 'hasRequest'.
+*Note* - this assertion can also be used to inspect resources downloaded on the page (e.g., external CSS, images, external sources, etc.), however the main use would most likely be testing APIs - therefore it is aptly named 'hasRequest'.
 
 <a name="Contribute"></a>
 
@@ -110,7 +113,7 @@ For contribution guidelines, see [Contributing](./CONTRIBUTING.md).
 
 ## Custom Nightwatch Assertions
 
-NightwatchJS contains a nifty feature which allows enhancing and customizing its basic set of test assertions 
+NightwatchJS contains a nifty feature that allows enhancing and customizing its basic set of test assertions 
 (- more info. on creating and configuring custom assertions can be found [here](https://tudorbarbu.ninja/custom-assertions-for-nightwatchjs/) 
 and [here](https://github.com/nightwatchjs/nightwatch-docs/blob/master/guide/extending-nightwatch/custom-assertions.md)).
 
