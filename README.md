@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.org/dexmac/api-validation-with-nightwatch.svg?branch=master)](https://travis-ci.org/dexmac/api-validation-with-nightwatch)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://raw.githubusercontent.com/dexmac/api-validation-with-nightwatch/master/LICENSE)
-
 **Table of Contents**
 
 - [Project Intro](#Intro)
@@ -10,41 +7,31 @@
 - [Contribute](#Contribute)
 - [Misc.](#Misc.)
 
-<a name="Intro"></a>
-
 # Intro
 Validating APIs with NightwatchJS
 
 NightwatchJS is a great tool for web application end-to-end automation.
+Each web application deals with many outgoing requests & incoming responses, whether it be by making AJAX requests or by downloading resources. 
+Thus, when performing end to end testing (with / w/o mocks) it is very beneficial to validate that outgoing requests conform to pre-set APIs.
 
-Every web application deals with many outgoing requests & incoming responses, 
-whether it be by making AJAX requests or by downloading resources. 
-Thus, when performing end to end testing it is very beneficial to validate if outgoing requests conform to pre-set APIs.
-
-But how can we make sure that a request was made and that it conforms to a specific protocol? 
+But how can we make sure the request was made and that it's protocol matches? 
 Come [NightwatchJS assertions](#custom-nightwatch-assertions) to the rescue…
 
-Common methods for testing APIs in E2E tests involve setting up mock-servers or using network sniffing tools.
-However, when testing with Nighwatch, it makes sense to use Nightwatch itself (via [performance.timing](#Supported Browsers))
+Common methods for testing APIs in E2E tests involve setting up mock-servers or using tools such as JMeter, Wireshark, etc.
+As Nightwatch tests are so common and usually already linked to CI servers, it makes sense to use Nightwatch itself (via [performance.timing](#Supported Browsers))
+The journey to API validation started out by finding an [existing assertion on Github](https://github.com/aedile/nightwatch-analytics/blob/master/tests/assertions/hasRequest.js) which validates that the parameters of a request exist. 
+- The current project builds on this and improves it by adding regular expression testing for validation of each of the request parameters.
 
-An existing Nightwatch assertion [exists on Github](https://github.com/aedile/nightwatch-analytics/blob/master/tests/assertions/hasRequest.js) to validates that the parameters of a request exist. 
-The current project is a rewrite which improves the assertion by adding regular expression testing for validation of each of the request parameters.
+This demo project shows an example of navigating to Google.com, performing a search for 'NightwatchJS' 
+and validating the search URL sent to Google's servers contains the search string as well as other parameters.
 
-The demo project is an example of navigating to Google.com, performing a search for 'NightwatchJS' 
-and validating if the search URL sent to Google's servers contains the string, as well as other parameters.
-
-For instructions on how the assertions can be used inside your own NightwatchJS project please see - 
-[Usage](#Usage). 
+For instructions on how the assertions can be used inside your own NightwatchJS project please see - [Usage](#Usage). 
 
 ![preview](apiValidation.gif)
-
-<a name="Install"></a>
 
 # Install
    - clone the repository
    - `npm install`
-
-<a name="Run"></a>
    
 # Run
 
@@ -52,9 +39,7 @@ To run the demo project, inside the root directory, run:
 ## `npm test`
 
 On a Mac, this should automatically run the Selenium server, the Chrome Webdriver and initiate Nightwatch. 
-(based on their locations in the `nightwatch.json` config.) and then open Chrome with the `tests/google.js` test scenario.
-
-<a name="Usage"></a>
+(based on their locations in the `nightwatch.json` config.) as well as open Chrome with the tests/google.js test scenario.
 
 ## Usage:
 
@@ -64,14 +49,14 @@ On a Mac, this should automatically run the Selenium server, the Chrome Webdrive
 and start using the assertion in our nightwatchJS tests like so: 
 
 ```javascript
-'test' : function(browser) {
-  var requestParameters = {
-    "param1" : "value1",
-    "param2" : "value2"
-  };
-
-  browser.assert.hasRequest('https://some.request.url', requestParameters);
-}
+  'test' : function(browser) {
+    var requestParameters = {
+      "param1" : "value1",
+      "param2" : "value2"
+    };
+  
+    browser.assert.hasRequest('https://some.request.url', requestParameters);
+  }
 ```
 
 The final URL to validate agains will therefore be: `https://some.request.url/?param1=value1&param2=value2`
@@ -81,26 +66,22 @@ to enable wildcards and “fuzzy comparison”, e.g.:
 
 ```javascript
 'test' : function(browser) {
-  var requestParameters = {
-    "param1" : ".*",
-    "param2" : "val.*"
-  };
-
-  browser.assert.hasRequest('https://some.request.url', requestParameters);
-}
+    var requestParameters = {
+      "param1" : ".*",
+      "param2" : "val.*"
+    };
+  
+    browser.assert.hasRequest('https://some.request.url', requestParameters);
+  }
 ```
 
-In which case even a URL such as: `https://some.request.url/?param1=ANYVALUE&param2=val123` 
-will pass the assertion.
+In which case even a URL such as: `https://some.request.url/?param1=ANYVALUE&param2=val123` will pass the assertion.
 
-*Note* - this assertion can also be used to inspect resources downloaded on the page (e.g., external CSS, images, external sources, etc.), however the main use would probably be testing APIs, and therefore it is aptly named - 'hasRequest'.
-
-<a name="Contribute"></a>
+*Note* Please note that this assertion can also be used to inspect resources downloaded on the page (e.g., external CSS, images, external sources, etc.),
+however the main use would probably be testing APIs, and therefore the assertion is named 'hasRequest'.
 
 ## Contribute
 For contribution guidelines, see [Contributing](./CONTRIBUTING.md).
-
-<a name="Misc."></a>
 
 ## Misc.
 - [Custom Nightwatch Assertions](#custom-nightwatch-assertions)
@@ -123,15 +104,13 @@ and [here](https://github.com/nightwatchjs/nightwatch-docs/blob/master/guide/ext
     
 ## Supported Browsers
 
-Nightwatch supports all major browsers through the use of browser-specific webdrivers, adhering to the Selenium API, however, the read-only access to the outgoing / incoming requests and resources is performed by the [Performance API](https://developer.mozilla.org/en-US/docs/Web/API/Performance), and namely `performance.timing`. 
-
-[Many more interesting measurements](http://kaaes.github.io/timing/info.html) can be measured using performance.timing, but we're mostly interested in the actual URL of the resource / request. 
+Nightwatch supports all major browsers through the use of browser-specific webdrivers, adhering to the Selenium API,
+however, the read-only access to the outgoing / incoming requests and resources is performed by the [Performance API](https://developer.mozilla.org/en-US/docs/Web/API/Performance),
+and namely `performance.timing`. [Many more interesting measurements](http://kaaes.github.io/timing/info.html) can be measured using performance.timing,
+however, we're mostly interested in the actual URL of the resource / request. 
 Any outgoing (and incoming) URL should be found under the this object.
-
 Having said that, requests that return with server error responses, connection issues, DNS lookup failures, etc. will [not be included]([https://github.com/w3c/resource-timing/issues/12]).
-
-
-*Note* - another thing which is important to note is that Apple only just recently **re**-added support for the performance API in Safari, in iOS 11.2 so bear in mind that the assertions will work good in Chrome and most Android 4.4 and up browsers, but will be missing on previous iOS versions above 8 and below 11.2.
+*Note* Another thing which is important to note is that Apple only just recently **re**-added support for the performance API in Safari, in iOS 11.2 so bear in mind that the assertions will work good in Chrome and most Android 4.4 and up browsers, but will be missing on previous iOS versions above 8 and below 11.2.
 
 For a detailed compatibility table for the features please see: [Performance API browser support](https://caniuse.com/#feat=resource-timing)
 
