@@ -1,14 +1,13 @@
-*Bug / New Feature Request*
-*About: Create a report to help us improve*
+##Bug / New Feature Request##
 
-## Bug or feature request?
+**Bug or feature request?**
 (answer here)
 <!--
 When raising a feature request please be sure to have a search
 through other open & closed issues tagged with 'new feature'
 -->
 
-**Describe the bug / requested feature **
+**Describe the bug / requested feature**
 A clear and concise description of the issue.
 
 **To Reproduce**
@@ -41,5 +40,5 @@ If applicable, add screenshots to help explain your problem.
 **Additional context**
 Add any other context about the problem here.
 
-**Screenshot / Video / Demo **
+**Screenshot / Video / Demo**
 A screenshot / video / demo (preferably on https://codesandbox.io) of the issue will be a great addition.
