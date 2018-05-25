@@ -35,7 +35,7 @@ The demo project includes an example of navigating to Google.com, performing a s
 and validating if the search URL sent to Google's servers contains the string, as well as other parameters.
 It also includes an example of how to setup NightwatchJS for use with Travis.CI, to run the tests on both Linux and Mac machines remotely.
 
-For more detailed instructions on how the assertion can be used inside your own NightwatchJS project please see the Usage(#Usage) section below.
+For more detailed instructions on how the assertion can be used inside your own NightwatchJS project please see the [Usage](#Usage) section below.
 
 ![preview](apiValidation.gif)
 
@@ -51,7 +51,7 @@ To run the demo project, inside the root directory, run:
 On a Mac, this should automatically run the Selenium server, the Chrome Webdriver and initiate Nightwatch. 
 (based on their locations in the `nightwatch.json` config.) as well as open Chrome with the tests/google.js test scenario.
 
-## Usage:
+## Usage
 
 1. Validate NightwatchJS's custom assertions directory and custom commands directory location inside your nightwatch.json configuration file: (e.g., "custom_assertions_path" : "tests/e2e/assertions", "custom_commands_path" : "tests/e2e/commands").
 
