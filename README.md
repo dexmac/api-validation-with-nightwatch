@@ -1,3 +1,6 @@
+-[![Build Status](https://travis-ci.org/dexmac/api-validation-with-nightwatch.svg?branch=master)](https://travis-ci.org/dexmac/api-validation-with-nightwatch)
+-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://raw.githubusercontent.com/dexmac/api-validation-with-nightwatch/master/LICENSE)
+
 **Table of Contents**
 
 - [Project Intro](#Intro)
