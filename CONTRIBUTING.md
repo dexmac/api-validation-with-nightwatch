@@ -4,5 +4,5 @@ commit your changes, and [open a pull request](https://help.github.com/articles/
 master branch.
 
 ## Issues
-The [issues page](https://github.com/dexmac/apiValidationUsingNightwatch/issues) contains existing known-issues.
-New issues can be opened [here](https://github.com/dexmac/apiValidationUsingNightwatch/issues/new).
+The [issues page](https://github.com/dexmac/api-validation-with-nightwatch/issues) contains existing known-issues.
+New issues can be opened [here](https://github.com/dexmac/api-validation-with-nightwatch/issues/new).
