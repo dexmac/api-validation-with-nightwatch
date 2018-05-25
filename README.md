@@ -35,8 +35,7 @@ The demo project includes an example of navigating to Google.com, performing a s
 and validating if the search URL sent to Google's servers contains the string, as well as other parameters.
 It also includes an example of how to setup NightwatchJS for use with Travis.CI, to run the tests on both Linux and Mac machines remotely.
 
-For more detailed instructions on how the assertion can be used inside your own NightwatchJS project please see - 
-[Usage](#Usage).
+For more detailed instructions on how the assertion can be used inside your own NightwatchJS project please see the Usage(#Usage) section below.
 
 ![preview](apiValidation.gif)
 
