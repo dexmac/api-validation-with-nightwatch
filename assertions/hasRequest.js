@@ -62,7 +62,7 @@ exports.assertion = function(filter, params) {
     var areSameProperties = false;
 
     if (typeof obj1 === 'object') {
-      for (key in obj1) {
+      for (var key in obj1) {
         if (!obj2 || !obj2.hasOwnProperty(key)) {
           console.error("Missing key: " + key + ".");
           return false;
@@ -89,7 +89,7 @@ exports.assertion = function(filter, params) {
     }
 
     // Check that all params exist and match each parameter
-    for (key in firstObject) {
+    for (var key in firstObject) {
       if (secondObject.hasOwnProperty(key)) {
         if (firstObject[key] !== secondObject[key] && !fuzzyCompare(firstObject[key], secondObject[key])) {
           console.error("Key [" + key + "]: \"" + firstObject[key] + "\" is not equals (or fuzzyequal) to: \""
