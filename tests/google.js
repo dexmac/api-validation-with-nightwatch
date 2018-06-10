@@ -24,7 +24,8 @@ module.exports = {
       cp: ".*",
       gs_id: ".*",
       q: searchString,
-      xhr: ".*"
+      xhr: ".*",
+      ei: ".*"
     };
     client.assert.hasRequest('https://www.google.com/complete/search', googleSearchQueryParams);
   }
