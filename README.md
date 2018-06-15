@@ -3,11 +3,11 @@
 
 **Table of Contents**
 
-- [Project Intro](#Intro)
-- [Install](#Install)
+- [Intro](#Intro)
+- [Installation](#Installation)
 - [Run](#Run)
-- [Usage](#Usage)
-- [Contribute](#Contribute)
+- [How to use the assertion](#How to use the assertion)
+- [Contributing](#Contributing)
 - [Misc.](#Misc.)
 
 <a name="Intro"></a>
@@ -43,14 +43,12 @@ It also includes an example of how to setup NightwatchJS for use with Travis.CI,
 in order to run the tests on Linux and Mac.
 
 For more detailed instructions on how the assertion can be used inside your own NightwatchJS project  
-please see the [Usage](#usage) section below.
+please see the [usage](#How to use the assertion) section below.
   
   
 ## What does it look like?
 
 ![preview](apiValidation.gif)
-
-  
   
 
 # Installation
