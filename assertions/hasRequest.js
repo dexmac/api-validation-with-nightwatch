@@ -43,7 +43,7 @@ exports.assertion = function(filter, params) {
     var queryStringValAsString = '' + queryStringVal;
 
     try {
-      var regExp = new RegExp('^' + regexpValAsString); // Checking if value starts with passed regExp
+      var regExp = new RegExp('^' + regexpValAsString); // Checking if value starts with passed regExp. '^' is added for convenience but can be removed.
       isFuzzyEqual = queryStringValAsString.match(regExp);
     } catch(e) {
       console.error("ERROR: Invalid RegExp: " + regexpValAsString + " for query string value: " + queryStringVal)
@@ -83,6 +83,9 @@ exports.assertion = function(filter, params) {
   var fuzzyCompareAllParams = function(firstObject, secondObject) {
     var areFuzzyEqual = true;
 
+    // Checking that the first object contains all of the properties we want to check for from the second object.
+    // Please note that this check doesn't check if we have other properties in the secondObject, however, this can easily be added,
+    // if needed, by also adding || !hasSameProperties(secondObject, firstObject) to the conditional below
     if (typeof firstObject !== 'object' || typeof secondObject !== 'object' || !hasSameProperties(firstObject, secondObject)) {
       console.error("fuzzyCompareAllParams - objects " + JSON.stringify(firstObject) + " and " + JSON.stringify(secondObject) + " are not equal");
       return false;
@@ -135,7 +138,7 @@ exports.assertion = function(filter, params) {
     
     var recordNotFoundStr = ' a URL / resource matching the query string parameters was not found';
     try {
-        recordNotFoundStr += '. Records on page: ' + JSON.stringify(records); 
+        recordNotFoundStr += '. Records on page (' + window.location.href + ') : ' + JSON.stringify(records); 
     } catch(e) {
     }
 
