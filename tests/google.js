@@ -10,11 +10,14 @@ module.exports = {
     var google = client.page.google();
     var searchString = 'nightwatchJS';
 
-    google.navigate()
+     google.navigate()
       .assert.title('Google')
       .assert.visible('@searchBar')
-      .setValue('@searchBar', searchString)
-      .click('@submit');
+      .setValue('@searchBar', searchString);
+
+    client.pause(500);
+    google.click('@submit');
+    client.pause(500); // A better way can be to wait for a UI change, but this is just for demo purposes
     
     var googleSearchQueryParams = {
       client: ".*",
