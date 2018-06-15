@@ -8,26 +8,27 @@ module.exports = {
 
   'Perform a Google search and validate search URL': function (client) {
     var google = client.page.google();
-    var searchString = 'nightwatchJS';
+    var searchString = 'The Night Watch';
 
-     google.navigate()
+    google.navigate()
       .assert.title('Google')
       .assert.visible('@searchBar')
-      .setValue('@searchBar', searchString);
+      .setValue('@searchBar', searchString, function() {
+        client.pause(1000); // A better way would be to wait on a UI change but this is just for the demo purposes.
 
-    client.pause(1000); // Waiting for search query to go out. A better way would be to wait for a UI change, but this is just for demo purposes
-    
-    var googleSearchQueryParams = {
-      client: ".*",
-      hl: ".*",
-      gs_rn: ".*",
-      gs_ri: ".*",
-      cp: ".*",
-      gs_id: ".*",
-      q: searchString,
-      xhr: ".*",
-      ei: ".*"
-    };
-    client.assert.hasRequest('https://www.google.com/complete/search', googleSearchQueryParams);
+        var googleSearchQueryParams = {
+          client: ".*",
+          hl: ".*",
+          gs_rn: ".*",
+          gs_ri: ".*",
+          cp: ".*",
+          gs_id: ".*",
+          q: searchString,
+          xhr: ".*",
+          ei: ".*"
+        };
+
+        client.assert.hasRequest('https://www.google.com/complete/search', googleSearchQueryParams);
+      });
   }
 };
