@@ -18,22 +18,29 @@
 
 NightwatchJS is a great tool for web-application end-to-end automation.
 
+
 Every web application deals with many outgoing requests & incoming responses, 
 whether it be by making AJAX requests or by downloading resources. 
 Thus, when performing end-to-end testing it is very beneficial to validate if outgoing requests conform to pre-set APIs.
 
 But how can we make sure that a request was made and that it conforms to a specific protocol? 
+
 Come [NightwatchJS assertions](#custom-nightwatch-assertions) to the rescue…
 
+
+# Nightwatch Assertions for Fun and Profit
+
 Common methods for testing APIs in E2E tests involve setting up mock-servers or using network sniffing tools.
-When testing with Nighwatch however, it makes sense to use Nightwatch itself (via [performance.timing](#Supported Browsers))
+When testing with Nighwatch however, it makes sense to use Nightwatch itself (via [performance.timing](#supported-browsers))
 
 An existing Nightwatch assertion [exists on Github](https://github.com/aedile/nightwatch-analytics/blob/master/tests/assertions/hasRequest.js) and validates that the parameters of a request exist. 
-The current assertion is a rewrite, which improves the above assertion by adding regular expression testing for validation of each of the request parameters.
+The current assertion is a rewrite, that improves the assertion above by adding regular expression testing for validation of each one of the request parameters.
 
-The demo project includes an example of navigating to Google.com, performing a search for 'NightwatchJS' 
+The demo project includes an example of navigating to Google.com - performing a search for 'NightwatchJS' 
 and validating if the search URL sent to Google's servers contains the string, as well as other parameters.
-It also includes an example of how to setup NightwatchJS for use with Travis.CI, to run the tests on both Linux and Mac machines remotely.
+
+It also includes an example of how to setup NightwatchJS for use with Travis.CI, 
+in order to run the tests on both Linux and Mac.
 
 For more detailed instructions on how the assertion can be used inside your own NightwatchJS project please see the [Usage](#usage) section below.
 
