@@ -14,7 +14,8 @@ module.exports = {
       .assert.title('Google')
       .assert.visible('@searchBar')
       .setValue('@searchBar', searchString)
-      .click('@submit');
+      .click('@submit')
+      .pause(1000); // A nicer way might be to wait for something on the page, but this is just for demo purposes.
 
     var googleSearchQueryParams = {
       client: ".*",
