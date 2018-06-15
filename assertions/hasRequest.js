@@ -132,8 +132,14 @@ exports.assertion = function(filter, params) {
         }
       }
     }
+    
+    var recordNotFoundStr = ' a URL / resource matching the query string parameters was not found';
+    try {
+        recordNotFoundStr += '. Records on page: ' + JSON.stringify(records); 
+    } catch(e) {
+    }
 
-    return (recordFound ? filter : ' a URL / resource matching the query string parameters was not found');
+    return (recordFound ? filter : recordNotFoundStr);
   };
 
   /**
