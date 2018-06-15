@@ -6,7 +6,7 @@
 - [Intro](#Intro)
 - [Installation](#Installation)
 - [Run](#Run)
-- [Usage](#How to use the assertion)
+- [Usage](#user-content-how-to-use-the-assertion)
 - [Contributing](#Contributing)
 - [Misc.](#Misc.)
 
@@ -43,7 +43,7 @@ It also includes an example of how to setup NightwatchJS for use with Travis.CI,
 in order to run the tests on Linux and Mac.
 
 For more detailed instructions on how the assertion can be used inside your own NightwatchJS project  
-please see the [usage](#How to use the assertion) section below.
+please see the [usage](#user-content-how-to-use-the-assertion) section below.
   
   
 ## What does it look like?
