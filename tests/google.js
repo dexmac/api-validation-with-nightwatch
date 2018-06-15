@@ -14,7 +14,7 @@ module.exports = {
       .assert.title('Google')
       .assert.visible('@searchBar')
       .setValue('@searchBar', searchString, function() {
-        client.pause(5000); // A better way would be to wait on a UI change but this is just for the demo purposes.
+        client.pause(10000); // A better way would be to wait on a UI change but this is just for the demo purposes.
 
         var googleSearchQueryParams = {
           client: ".*",
