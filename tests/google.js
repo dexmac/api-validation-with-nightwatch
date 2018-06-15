@@ -15,9 +15,7 @@ module.exports = {
       .assert.visible('@searchBar')
       .setValue('@searchBar', searchString);
 
-    client.pause(2000);
-    google.click('@submit');
-    client.pause(5000); // A better way can be to wait for a UI change, but this is just for demo purposes
+    client.pause(1000); // Waiting for search query to go out. A better way would be to wait for a UI change, but this is just for demo purposes
     
     var googleSearchQueryParams = {
       client: ".*",
