@@ -103,7 +103,7 @@ to enable wildcards and “fuzzy comparison”, e.g.:
 
 In which case even a URL such as: `https://some.request.url/?param1=ANYVALUE&param2=val123` will pass the assertion.
 
-*Note* - this assertion can also be used to inspect resources downloaded on the page (e.g., external CSS, images, external sources, etc.), however the main use would most likely be testing APIs - and therefore it is aptly named 'hasRequest'.
+*Note* - this assertion can also be used to inspect incoming responses as well as resources downloaded on the page (e.g., external CSS, images, external sources, etc.), however the main use would most likely be testing APIs - and therefore it is aptly named 'hasRequest'.
 
 <a name="Contribute"></a>
 
@@ -118,8 +118,8 @@ For contribution guidelines, see [Contributing](./CONTRIBUTING.md).
 
 ## Custom Nightwatch Assertions
 
-NightwatchJS contains a nifty feature that allows enhancing and customizing its basic set of test assertions 
-(- more info. on creating and configuring custom assertions can be found [here](https://tudorbarbu.ninja/custom-assertions-for-nightwatchjs/) 
+NightwatchJS contains a nifty feature that allows enhancing and customizing its basic set of test assertions  
+(more info. on creating and configuring custom assertions can be found [here](https://tudorbarbu.ninja/custom-assertions-for-nightwatchjs/) 
 and [here](https://github.com/nightwatchjs/nightwatch-docs/blob/master/guide/extending-nightwatch/custom-assertions.md)).
 
 ## Stack
@@ -137,6 +137,7 @@ and namely `performance.timing`. [Many more interesting measurements](http://kaa
 however, we're mostly interested in the actual URL of the resource / request.  
 Any outgoing (and incoming) URL should be found under the this object.  
 Having said that, requests that return with server error responses, connection issues, DNS lookup failures, etc. will [not be included]([https://github.com/w3c/resource-timing/issues/12]).  
+
 *Note* - Apple have only just recently **re**-added support for the performance API in Safari on iOS 11.2, 
 so bear in mind that the assertions will work good in Chrome and most Android 4.4 and up browsers, but will be missing on most iOS versions below 11.2.
 
