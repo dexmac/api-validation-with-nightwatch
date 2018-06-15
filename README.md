@@ -64,8 +64,9 @@ To run the demo project, inside the root directory, run:
 
 On a Mac, this should automatically run the Selenium server, the Chrome Webdriver and initiate Nightwatch. 
 (based on their locations in the `nightwatch.json` config.) as well as open Chrome with the tests/google.js test scenario.
-
-## How to use the assertion
+  
+  
+# How to use the assertion
 
 1. Validate NightwatchJS's custom assertions directory and custom commands directory location inside your nightwatch.json configuration file: (e.g., "custom_assertions_path" : "tests/e2e/assertions", "custom_commands_path" : "tests/e2e/commands").
 
@@ -108,7 +109,7 @@ In which case even a URL such as: `https://some.request.url/?param1=ANYVALUE&par
 
 <a name="Contribute"></a>
 
-## Contribute
+## Contributing
 For contribution guidelines, see [Contributing](./CONTRIBUTING.md).
 
 ## Misc.
