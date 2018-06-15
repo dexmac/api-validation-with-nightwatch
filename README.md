@@ -6,7 +6,7 @@
 - [Intro](#Intro)
 - [Installation](#Installation)
 - [Run](#Run)
-- [How to use the assertion](#How to use the assertion)
+- [Usage](#How to use the assertion)
 - [Contributing](#Contributing)
 - [Misc.](#Misc.)
 
