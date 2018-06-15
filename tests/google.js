@@ -16,8 +16,6 @@ module.exports = {
       .setValue('@searchBar', searchString)
       .click('@submit');
     
-    client.pause(2500); // A much nicer way might be to wait for something on the page, but this is just for demo purposes.
-
     var googleSearchQueryParams = {
       client: ".*",
       hl: ".*",
