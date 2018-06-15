@@ -28,7 +28,7 @@ But how can we make sure that a request was made and that it conforms to a speci
 Come [NightwatchJS assertions](#custom-nightwatch-assertions) to the rescue…
 
 
-# Nightwatch Assertions for Fun and Profit
+## Nightwatch Assertions for Fun and Profit
 
 Common methods for testing APIs in E2E tests involve setting up mock-servers or using network sniffing tools.
 When testing with Nighwatch however, it makes sense to use Nightwatch itself (via [performance.timing](#supported-browsers))
@@ -39,18 +39,25 @@ The current assertion is a rewrite, that improves the assertion above by adding 
 The demo project includes an example of navigating to Google.com - performing a search for 'NightwatchJS' 
 and validating if the search URL sent to Google's servers contains the string, as well as other parameters.
 
-It also includes an example of how to setup NightwatchJS for use with Travis.CI, 
+It also includes an example of how to setup NightwatchJS for use with Travis.CI,  
 in order to run the tests on both Linux and Mac.
 
-For more detailed instructions on how the assertion can be used inside your own NightwatchJS project please see the [Usage](#usage) section below.
+For more detailed instructions on how the assertion can be used inside your own NightwatchJS project  
+please see the [Usage](#usage) section below.
+  
+  
+## Demo
 
 ![preview](apiValidation.gif)
 
-# Install
+  
+  
+
+# Installation
    - clone the repository
    - `npm install`
    
-# Run
+# Running
 
 To run the demo project, inside the root directory, run:
 ## `npm test`
@@ -58,7 +65,7 @@ To run the demo project, inside the root directory, run:
 On a Mac, this should automatically run the Selenium server, the Chrome Webdriver and initiate Nightwatch. 
 (based on their locations in the `nightwatch.json` config.) as well as open Chrome with the tests/google.js test scenario.
 
-## Usage
+## Assertion Usage
 
 1. Validate NightwatchJS's custom assertions directory and custom commands directory location inside your nightwatch.json configuration file: (e.g., "custom_assertions_path" : "tests/e2e/assertions", "custom_commands_path" : "tests/e2e/commands").
 
