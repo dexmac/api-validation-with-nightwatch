@@ -14,7 +14,7 @@
 
 # Intro
 
-# Validating APIs using NightwatchJS
+# Validating APIs with NightwatchJS
 
 NightwatchJS is a great tool for web-application end-to-end automation.
 
@@ -46,7 +46,7 @@ For more detailed instructions on how the assertion can be used inside your own 
 please see the [Usage](#usage) section below.
   
   
-## Demo
+## How does it look like?
 
 ![preview](apiValidation.gif)
 
@@ -57,7 +57,7 @@ please see the [Usage](#usage) section below.
    - clone the repository
    - `npm install`
    
-# Running
+# Run
 
 To run the demo project, inside the root directory, run:
 ## `npm test`
@@ -65,7 +65,7 @@ To run the demo project, inside the root directory, run:
 On a Mac, this should automatically run the Selenium server, the Chrome Webdriver and initiate Nightwatch. 
 (based on their locations in the `nightwatch.json` config.) as well as open Chrome with the tests/google.js test scenario.
 
-## Assertion Usage
+## How to use the assertion
 
 1. Validate NightwatchJS's custom assertions directory and custom commands directory location inside your nightwatch.json configuration file: (e.g., "custom_assertions_path" : "tests/e2e/assertions", "custom_commands_path" : "tests/e2e/commands").
 
@@ -137,8 +137,9 @@ however, the read-only access to the outgoing / incoming requests and resources 
 and namely `performance.timing`. [Many more interesting measurements](http://kaaes.github.io/timing/info.html) can be measured using performance.timing,
 however, we're mostly interested in the actual URL of the resource / request. 
 Any outgoing (and incoming) URL should be found under the this object.
-Having said that, requests that return with server error responses, connection issues, DNS lookup failures, etc. will [not be included]([https://github.com/w3c/resource-timing/issues/12]).
-*Note* Another thing which is important to note is that Apple only just recently **re**-added support for the performance API in Safari, in iOS 11.2 so bear in mind that the assertions will work good in Chrome and most Android 4.4 and up browsers, but will be missing on previous iOS versions above 8 and below 11.2.
+Having said that, requests that return with server error responses, connection issues, DNS lookup failures, etc. will [not be included]([https://github.com/w3c/resource-timing/issues/12]).  
+*Note* - Apple have only just recently **re**-added support for the performance API in Safari on iOS 11.2, 
+so bear in mind that the assertions will work good in Chrome and most Android 4.4 and up browsers, but will be missing on most iOS versions below 11.2.
 
 For a detailed compatibility table for the features please see: [Performance API browser support](https://caniuse.com/#feat=resource-timing)
 
